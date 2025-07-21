@@ -22,4 +22,8 @@ export class TodoItemComponent {
       completed : !this.todo().completed
     });
   }
+
+  getLabelForCheckbox(){
+    return 'Mark todo item as' + this.todo().completed? 'Finalizado' : 'Pendente' ;
+  }
 }

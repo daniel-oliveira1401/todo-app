@@ -42,4 +42,12 @@ export class TodoComponent implements OnInit {
     this.todoService.updateTodo(todo);
   }
 
+  countCompletedTodos(){
+    return this.todos().filter(t => t.completed).length;
+  }
+
+  countPendingTodos(){
+    return this.todos().filter(t => !t.completed).length;
+  }
+
 }

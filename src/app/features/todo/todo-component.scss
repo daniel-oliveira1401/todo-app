@@ -6,8 +6,24 @@
     max-width: clamp(300px, 50vw, 600px);
     margin-inline: auto;
     
-    h1 {
+    .title-bar{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-bottom: 1.5rem;
+
+        .stats{
+            font-size: 1.25rem;
+            display: flex;
+            
+            > * {
+                display: block;
+                margin-left: 1rem;
+            }
+            
+            
+        }
     }
 
     .add-todo{

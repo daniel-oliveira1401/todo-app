@@ -2,13 +2,15 @@
     <h1>Todo App</h1>
     <form class="add-todo" (submit)="addTodo($event)">
         <input placeholder="Ex: Lavar a Louça" class="add-todo_title" [formControl]="titleFormControl" type="text">
-        <button type="submit" class="add-todo__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+        <button aria-label="Add todo" title="Add todo" type="submit" class="add-todo__icon">
+            <svg aria-label="Black '+' sign" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
+                Add Todo
+            </svg>
         </button>
     </form>
-    <ul class="todo-list">
+    <ul role="list" aria-label="List of todo items" class="todo-list">
         @for (todo of todos(); track todo.id) {
-            <li>
+            <li [ariaLabel]="todo.title" role="listitem">
                 <app-todo-item-component 
                     [todo]="todo"
                     (removeTodo)="removeTodo($event)" 

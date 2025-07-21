@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
     {
         path: 'todos',
-        loadComponent: () => import('./features/todo-component/todo-component').then(c => c.TodoComponent)
+        loadChildren: () => import('./features/todo/todo-module').then(c => c.TodoModule)
     },
     {
         path: '',

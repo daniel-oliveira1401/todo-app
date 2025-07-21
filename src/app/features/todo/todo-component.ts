@@ -1,17 +1,14 @@
 import { Component, inject, OnInit, Signal, WritableSignal } from '@angular/core';
 import { TodoModel } from '../../shared/models/todo-model';
 import { TodoService } from '../../core/services/todo-service';
-import { TodoItemComponent } from './components/todo-item-component/todo-item-component';
+
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TodoItemComponent } from './todo-item-component/todo-item-component';
 
 @Component({
   selector: 'app-todo-component',
-  imports: [
-    TodoItemComponent,
-    ReactiveFormsModule,
-    CommonModule
-  ],
+  standalone: false,
   templateUrl: './todo-component.html',
   styleUrl: './todo-component.scss'
 })
